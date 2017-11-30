@@ -1,0 +1,14 @@
+name = Bakery
+description = Provides single-sign-on support across second-level domains.
+core = 7.x
+files[] = bakery.module
+php = 5.1.2
+
+configure = admin/config/system/bakery
+
+; Information added by Drupal.org packaging script on 2017-07-25
+version = "7.x-2.0-alpha4+36-dev"
+core = "7.x"
+project = "bakery"
+datestamp = "1501014845"
+

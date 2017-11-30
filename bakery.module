@@ -611,11 +611,9 @@ function bakery_settings($form, &$form_state) {
     'language' => t('language'),
     'signature' => t('signature'),
   );
-  if (module_exists('profile')) {
-    $result = db_query('SELECT name, title FROM {profile_field} ORDER BY category, weight');
-    foreach ($result as $field) {
-      $options[$field->name] = check_plain($field->title);
-    }
+  $fields  = field_info_instances('user');
+  foreach ($fields['user'] as $field ) {
+    $options[$field['field_name']] = $field['label'];
   }
   $form['bakery_supported_fields'] = array(
     '#type' => 'checkboxes',
